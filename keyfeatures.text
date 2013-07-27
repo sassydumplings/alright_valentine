@@ -1,0 +1,38 @@
+Summary: The next big dating application!
+
+Users sign up to create their dating profile. They can sign up for 'Free' or 'Paid' accounts. All users can search for other singles and view their profiles, but Paid account-holders can also message other singles. Paid account-holders also have a page where they can see other singles that have similar interests to them!
+
+Users sign up for a monthly subscription to become Paid users. Use the Stripe gem.
+Messaging between users is real-time, which means no page-refresh. Use a JS timer.
+The page for Paid users that shows them similar users is built by executing some kind of matching algorithm. Don't freak out. Just think of some kind of matching that you can do between users to achieve some form of same-ness.
+Don't forget that dating website profiles need - more than anything else - photos. Use Carrierwave so your users can upload photos of themselves.
+Use Github
+
+Milestones
+
+Basic App Setup: Create models and setup all the necessary basic CRUD functionality. You may not use rails g(enerate) scaffold, but you may use other generators.
+Stripe: Users can make monthly payments to become Paid users for full functionality.
+Search: Allow all users to search for others using fulltext search.
+Matching: Make a matching algorithm for paid users based on whatever metrics you believe are the most important.
+Messages: Paid users can real-time chat with others.
+Add your repo's URL here: https://github.com/sumeetjain/WDI-SF-May-2013/issues/38
+
+This app should work but it should also look awesome! No page-width Foundation forms; special links should be styled like Buttons, etc. (Bonus: Don't use a Framework.)
+
+Signup and Login should be handled with AJAX. This will be the norm for all application from now on.
+
+Write some tests (at least for your models but preferably for some features as well).
+
+Models:
+
+Users - email, password,kin, birthday, interests, gender, avatar, paid_user default => false
+Sessions - socery gem with ajax login and logout
+Messages:
+class Message < ActiveRecord::Base
+  attr_accessible :sender_id, :receiver_id, :subject, :content, :unread
+
+  belongs_to :sender, :class_name => "User"
+  belongs_to :receiver, :class_name => "User"
+end
+
+
