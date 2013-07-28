@@ -2,6 +2,12 @@ Summary: The next big dating application!
 
 Users sign up to create their dating profile. They can sign up for 'Free' or 'Paid' accounts. All users can search for other singles and view their profiles, but Paid account-holders can also message other singles. Paid account-holders also have a page where they can see other singles that have similar interests to them!
 
+Homework:
+
+1. http://whit-ny.com/
+
+2. Valentineapp
+
 Users sign up for a monthly subscription to become Paid users. Use the Stripe gem.
 Messaging between users is real-time, which means no page-refresh. Use a JS timer.
 The page for Paid users that shows them similar users is built by executing some kind of matching algorithm. Don't freak out. Just think of some kind of matching that you can do between users to achieve some form of same-ness.
@@ -22,6 +28,13 @@ This app should work but it should also look awesome! No page-width Foundation f
 Signup and Login should be handled with AJAX. This will be the norm for all application from now on.
 
 Write some tests (at least for your models but preferably for some features as well).
+
+MVP:
+
+carrierwave upload during signup process
+ajax login/logout
+
+
 
 Models:
 

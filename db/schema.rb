@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130727002648) do
+ActiveRecord::Schema.define(:version => 20130727204752) do
 
   create_table "messages", :force => true do |t|
     t.integer "sender_id"
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(:version => 20130727002648) do
     t.string   "kin"
     t.string   "avatar"
     t.text     "interests"
-    t.datetime "birthday"
     t.boolean  "paid_user",        :default => false
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
+    t.date     "birthday"
   end
 
 end

@@ -1,16 +1,22 @@
 class SessionsController < ApplicationController
+  def new
+    @user = User.new
+  end
+
   def create
-    user = login(params[:email], params[:password]
-    if user
-      redirect_back_or_to root_url, :notice => "Logged in!"
-    else
-      flash.now.alert = "Email or password was invalid"
-      render :new
-    end
+    respond_to do |format|
+          if @user = login(params[:username],params[:password])
+            format.html { redirect_back_or_to(root_path, :notice => 'Login successful') }
+            format.xml { render :xml => @user, :status => :created, :location => @user }
+          else
+            format.html { flash.now[:alert] = "Login failed"; render :action => "new" }
+            format.xml { render :xml => @user.errors, :status => :unprocessable_entity }
+          end
+      end
   end
 
   def destroy
     logout
-    redirect_to root_url, :notice => "Logged out!"
+    redirect_to(root_path, :notice => 'Logged out!')
   end
 end
